@@ -9,3 +9,26 @@ You can find their descriptions in the [Demo Kit](https://sapui5.hana.ondemand.c
 
 SAPUI5 supports multiple view types (XML, HTML, JavaScript). \
 We choose XML as this produces the most readable code and will force us to separate the view declaration from the controller logic.
+
+A view does not necessarily need an explicitly assigned controller. \
+You do not have to create a controller if the view is just displaying information and no additional functionality is required. \
+If a controller is specified, it is instantiated after the view is loaded.
+
+## Conventions
+
+* Name of the root HTML file of the app is `index.html`
+* View names are capitalized
+* All views are stored in the view folder
+* Names of XML views always end with `*.view.xml`
+* The default XML namespace is **sap.m**
+* Other XML namespaces use the last part of the SAP namespace as alias (for example, **mvc** for **sap.ui.core.mvc**)
+* Controller names are capitalized
+* Event handlers are prefixed with on
+* Controller names always end with `*.controller.js`
+
+## Framework specifics
+
+* Only instances of `sap.ui.core.Control` or their subclasses can be rendered stand-alone and have a `placeAt` function. \
+  Each control extends `sap.ui.core.Element` that can only be rendered inside controls.
+* The namespace identifies all resources of the project and has to be unique. \
+  If you develop your own application code or controls, you cannot use the namespace prefix **sap**, because this namespace is reserved for SAP resources.
