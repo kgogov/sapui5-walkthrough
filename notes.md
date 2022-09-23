@@ -16,6 +16,11 @@ If a controller is specified, it is instantiated after the view is loaded.
 
 In SAPUI5, resources are often referred to as modules.
 
+We add an init function to the controller. \
+`onInit` is one of SAPUI5’s lifecycle methods that is invoked by the framework when the controller is created, similar to a constructor function of a control.
+
+For more information please refer to [this](https://blogs.sap.com/2018/11/12/sapui5-controller-lifecycle-methods-explained/) blog post.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -27,6 +32,7 @@ In SAPUI5, resources are often referred to as modules.
 * Controller names are capitalized
 * Event handlers are prefixed with on
 * Controller names always end with `*.controller.js`
+* Use Hungarian notation for variable names.
 
 ## Framework specifics
 
@@ -37,3 +43,4 @@ In SAPUI5, resources are often referred to as modules.
 * Use `sap.ui.define` for controllers and all other JavaScript modules to define a global namespace.
 * Use `sap.ui.require` for asynchronously loading dependencies but without declaring a namespace, for example code that just needs to be executed, but does not need to be called from other code.
   * Use the name of the artifact to load for naming the function parameters (without namespace).
+* The curly brackets {…} indicate that data is taken from the value of the `recipient`'s object name property. This is called **"data binding"**.
