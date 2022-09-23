@@ -21,6 +21,9 @@ We add an init function to the controller. \
 
 For more information please refer to [this](https://blogs.sap.com/2018/11/12/sapui5-controller-lifecycle-methods-explained/) blog post.
 
+Components are independent and reusable parts used in SAPUI5 applications. \
+This architectural change allows our app to be used in more flexible environments than our static **index.html** page, such as in a surrounding container like the SAP Fiori launchpad.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
