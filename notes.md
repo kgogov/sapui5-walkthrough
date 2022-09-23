@@ -5,4 +5,7 @@ This process of loading and initializing SAPUI5 is called **bootstrapping**.
 
 SAPUI5 Controls are used to define appearance and behavior of parts of the screen. \
 All controls of SAPUI5 have a fixed set of properties, aggregations, and associations for configuration. \
-You can find their descriptions in the Demo Kit.
+You can find their descriptions in the [Demo Kit](https://sapui5.hana.ondemand.com/#/api).
+
+SAPUI5 supports multiple view types (XML, HTML, JavaScript). \
+We choose XML as this produces the most readable code and will force us to separate the view declaration from the controller logic.
