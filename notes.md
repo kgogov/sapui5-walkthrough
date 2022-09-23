@@ -14,6 +14,8 @@ A view does not necessarily need an explicitly assigned controller. \
 You do not have to create a controller if the view is just displaying information and no additional functionality is required. \
 If a controller is specified, it is instantiated after the view is loaded.
 
+In SAPUI5, resources are often referred to as modules.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -32,3 +34,6 @@ If a controller is specified, it is instantiated after the view is loaded.
   Each control extends `sap.ui.core.Element` that can only be rendered inside controls.
 * The namespace identifies all resources of the project and has to be unique. \
   If you develop your own application code or controls, you cannot use the namespace prefix **sap**, because this namespace is reserved for SAP resources.
+* Use `sap.ui.define` for controllers and all other JavaScript modules to define a global namespace.
+* Use `sap.ui.require` for asynchronously loading dependencies but without declaring a namespace, for example code that just needs to be executed, but does not need to be called from other code.
+  * Use the name of the artifact to load for naming the function parameters (without namespace).
