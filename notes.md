@@ -91,6 +91,10 @@ Dialogs are special, because they open on top of the regular app content and thu
 It is a good practice to set a unique ID like helloWorldButton to key controls of your app so that can be identified easily. \
 If the attribute `id` is not specified, the OpenUI5 runtime generates unique but changing ID like `__button23` for the control.
 
+## Step 17: Fragment Callbacks
+
+The event handler function is put into the same controller file and it closes the dialog by accessing the internal helper function that returns the dialog.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
