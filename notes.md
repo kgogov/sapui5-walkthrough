@@ -29,12 +29,12 @@ We add an init function to the controller. \
 
 For more information please refer to [this](https://blogs.sap.com/2018/11/12/sapui5-controller-lifecycle-methods-explained/) blog post.
 
-## Step 8: Component Configuration
+## Step 9: Component Configuration
 
 Components are independent and reusable parts used in SAPUI5 applications. \
 This architectural change allows our app to be used in more flexible environments than our static **index.html** page, such as in a surrounding container like the SAP Fiori launchpad.
 
-## Step 9: Descriptor for Applications
+## Step 10: Descriptor for Applications
 
 All application-specific configuration settings will now further be put in a separate descriptor file called **manifest.json** \
 This clearly separates the application coding from the configuration settings and makes our app even more flexible. \
@@ -49,16 +49,23 @@ There are three important sections defined by namespaces in the manifest.json fi
 
 Automatic model instantiation is only available as of SAPUI5 version 1.30.
 
-## Step 10: Pages and Panels
+## Step 11: Pages and Panels
 
 After all the work on the app structure it’s time to improve the look of our app. \
 We will use two controls from the **sap.m** library to add a bit more "bling" to our UI. You will also learn about control aggregations in this step.
 
-## Step 11: Shell
+## Step 12: Shell Control as Container
 
 Now we use a shell control as container for our app and use it as our new root element. The shell takes care of visual adaptation of the application to the device’s screen size by introducing a so-called letterbox on desktop screens. \
 The app is now run in a shell that limits the app width. \
 There are further options to customize the shell, like setting a custom background image or color and setting a custom logo. Check the related [API reference](https://sapui5.hana.ondemand.com/#/api/sap.m.Shell) for more details.
+
+## Step 13: Margins and Paddings
+
+Instead of manually adding CSS to the controls, we will use the standard classes provided by SAPUI5. \
+These classes take care of consistent sizing steps, left-to-right support, and responsiveness. \
+Margins can be added to all kinds of controls and are available in many different options.
+
 
 ## Conventions
 
@@ -80,6 +87,7 @@ There are further options to customize the shell, like setting a custom backgrou
   * Use Unicode escape sequences for special characters.
 * The descriptor file is named **manifest.json**
 * Use translatable strings for the title and the description of the app.
+* Use the standard SAPUI5 CSS classes for the layout if possible.
 
 ## Framework specifics
 
