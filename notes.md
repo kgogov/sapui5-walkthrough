@@ -77,6 +77,11 @@ In a new style definition file inside the css folder we create our custom classe
 
 For a complete list of the available CSS class names, see [CSS Classes for Theme Parameters](https://sapui5.hana.ondemand.com/#/topic/ea08f53503da42c19afd342f4b0c9ec7.html).
 
+## Step 15: Nested Views
+
+Instead of putting the panel and its content directly into our App view, we will move it to a new separate HelloPanel view. \
+We refer to this using an XMLView tag in the content aggregation of the panel.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
