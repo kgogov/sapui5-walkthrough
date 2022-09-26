@@ -102,6 +102,12 @@ The identifier world is the readable name of the icon in the icon font.
 
 You can look up other icons using the [Icon Explorer](https://sapui5.hana.ondemand.com/sdk/test-resources/sap/m/demokit/iconExplorer/webapp/index.html) tool in the Demo Kit.
 
+## Step 19: Aggregation Binding
+
+JSON is a very lightweight format for storing data and can be directly used as a data source for SAPUI5 applications.
+
+In the **items** aggregation, we define the template for the list that will be automatically repeated for each invoice of our test data.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
