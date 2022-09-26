@@ -1,14 +1,22 @@
 # Walkthrough notes
 
+## Step 1: Bootstrapping our UI5 application
+
 Before we can do something with SAPUI5, we need to load and initialize it. \
 This process of loading and initializing SAPUI5 is called **bootstrapping**.
+
+## Step 2: Controls
 
 SAPUI5 Controls are used to define appearance and behavior of parts of the screen. \
 All controls of SAPUI5 have a fixed set of properties, aggregations, and associations for configuration. \
 You can find their descriptions in the [Demo Kit](https://sapui5.hana.ondemand.com/#/api).
 
+## Step 3: XML Views
+
 SAPUI5 supports multiple view types (XML, HTML, JavaScript). \
 We choose XML as this produces the most readable code and will force us to separate the view declaration from the controller logic.
+
+## Step 4: Controllers
 
 A view does not necessarily need an explicitly assigned controller. \
 You do not have to create a controller if the view is just displaying information and no additional functionality is required. \
@@ -21,8 +29,12 @@ We add an init function to the controller. \
 
 For more information please refer to [this](https://blogs.sap.com/2018/11/12/sapui5-controller-lifecycle-methods-explained/) blog post.
 
+## Step 8: Component Configuration
+
 Components are independent and reusable parts used in SAPUI5 applications. \
 This architectural change allows our app to be used in more flexible environments than our static **index.html** page, such as in a surrounding container like the SAP Fiori launchpad.
+
+## Step 9: Descriptor for Applications
 
 All application-specific configuration settings will now further be put in a separate descriptor file called **manifest.json** \
 This clearly separates the application coding from the configuration settings and makes our app even more flexible. \
@@ -37,8 +49,16 @@ There are three important sections defined by namespaces in the manifest.json fi
 
 Automatic model instantiation is only available as of SAPUI5 version 1.30.
 
+## Step 10: Pages and Panels
+
 After all the work on the app structure it’s time to improve the look of our app. \
 We will use two controls from the **sap.m** library to add a bit more "bling" to our UI. You will also learn about control aggregations in this step.
+
+## Step 11: Shell
+
+Now we use a shell control as container for our app and use it as our new root element. The shell takes care of visual adaptation of the application to the device’s screen size by introducing a so-called letterbox on desktop screens. \
+The app is now run in a shell that limits the app width. \
+There are further options to customize the shell, like setting a custom background image or color and setting a custom logo. Check the related [API reference](https://sapui5.hana.ondemand.com/#/api/sap.m.Shell) for more details.
 
 ## Conventions
 
