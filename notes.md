@@ -132,6 +132,7 @@ In the **items** aggregation, we define the template for the list that will be a
 * Do not specify colors in custom CSS but use the standard theme-dependent classes instead.
 * Private functions and variables should always start with an underscore.
 * Always use icon fonts rather than images wherever possible, as they are scalable without quality loss (vector graphics) and do not need to be loaded separately.
+* Use data types instead of custom formatters whenever possible.
 
 ## Framework specifics
 
