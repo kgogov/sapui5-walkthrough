@@ -95,6 +95,13 @@ If the attribute `id` is not specified, the OpenUI5 runtime generates unique but
 
 The event handler function is put into the same controller file and it closes the dialog by accessing the internal helper function that returns the dialog.
 
+## Step 18: Icons
+
+We add an icon to the button that opens the dialog. The `sap-icon://` protocol is indicating that an icon from the icon font should be loaded. \
+The identifier world is the readable name of the icon in the icon font.
+
+You can look up other icons using the [Icon Explorer](https://sapui5.hana.ondemand.com/sdk/test-resources/sap/m/demokit/iconExplorer/webapp/index.html) tool in the Demo Kit.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -118,6 +125,7 @@ The event handler function is put into the same controller file and it closes th
 * Use the standard SAPUI5 CSS classes for the layout if possible.
 * Do not specify colors in custom CSS but use the standard theme-dependent classes instead.
 * Private functions and variables should always start with an underscore.
+* Always use icon fonts rather than images wherever possible, as they are scalable without quality loss (vector graphics) and do not need to be loaded separately.
 
 ## Framework specifics
 
