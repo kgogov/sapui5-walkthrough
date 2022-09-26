@@ -37,6 +37,9 @@ There are three important sections defined by namespaces in the manifest.json fi
 
 Automatic model instantiation is only available as of SAPUI5 version 1.30.
 
+After all the work on the app structure it’s time to improve the look of our app. \
+We will use two controls from the **sap.m** library to add a bit more "bling" to our UI. You will also learn about control aggregations in this step.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
