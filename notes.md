@@ -82,6 +82,15 @@ For a complete list of the available CSS class names, see [CSS Classes for Theme
 Instead of putting the panel and its content directly into our App view, we will move it to a new separate HelloPanel view. \
 We refer to this using an XMLView tag in the content aggregation of the panel.
 
+## Step 16: Dialogs and Fragments
+
+Fragments are light-weight UI parts (UI subtrees) which can be reused but do not have any controller.
+
+Dialogs are special, because they open on top of the regular app content and thus do not belong to a specific view.
+
+It is a good practice to set a unique ID like helloWorldButton to key controls of your app so that can be identified easily. \
+If the attribute `id` is not specified, the OpenUI5 runtime generates unique but changing ID like `__button23` for the control.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -104,6 +113,7 @@ We refer to this using an XMLView tag in the content aggregation of the panel.
 * Use translatable strings for the title and the description of the app.
 * Use the standard SAPUI5 CSS classes for the layout if possible.
 * Do not specify colors in custom CSS but use the standard theme-dependent classes instead.
+* Private functions and variables should always start with an underscore.
 
 ## Framework specifics
 
