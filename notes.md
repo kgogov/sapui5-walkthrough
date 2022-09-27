@@ -134,6 +134,20 @@ We add a declarative sorter to our binding syntax.\
 As usual, we transform the simple binding syntax to the object notation, specify the path to the data, and now add an additional `sorter` property. \
 By default, the sorting is ascending, but you could also add a property `descending` with the value `true` inside the sorter property to change the sorting order.
 
+## Step 25: Remote OData Service
+
+Our component now automatically creates an instance of `sap.ui.model.odata.v2.ODataModel` according to the settings we specified above, and makes it available as a model named `invoice`. \
+When you use the `invoiceRemote` data source, the `ODataModel` fetches the data from the real Northwind OData service.
+
+> **ℹ️ Note** \
+If you want to have a default model on the component, you can change the name of the model to an empty string in the descriptor file. \
+Automatically instantiated models can be retrieved by calling `this.getModel` in the component. In the controllers of component-based apps you can call `this.getView().getModel()` to get the automatically instantiated model. \
+For retrieving a named model you have to pass on the model name defined in the descriptor file to `getModel`, that is, in the component you would call `this.getModel("invoice")` to get our automatically generated invoice model that we defined in the descriptor.
+
+If you use a remote URL in your code, for example a remote OData service, such as the publicly available Northwind OData service, the browser may refuse to connect to a remote URL. Due to the same-origin policy, browsers deny AJAX requests to service endpoints in case the service endpoint has a different domain/subdomain, protocol, or port than the app.
+
+Depending on your development environment you have different options to overcome this restriction. For more information, see [Request Fails Due to Same-Origin Policy (Cross-Origin Resource Sharing - CORS)](https://sapui5.hana.ondemand.com/#/topic/5bb388fc289d44dca886c8fa25da466e.html).
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
