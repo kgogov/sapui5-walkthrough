@@ -117,6 +117,17 @@ There we defined a property `formatter` that holds our formatter functions, so w
 
 Head to [this](https://sapui5.hana.ondemand.com/#/topic/07e4b920f5734fd78fdaa236f26236d8.html) link for more information.
 
+## Step 23: Filtering
+
+In the `onFilterInvoices` function we construct a filter object from the search string that the user has typed in the search field. \
+Event handlers always receive an event argument that can be used to access the parameters that the event provides.
+
+In our case the search field defines a parameter query that we access by calling `getParameter(“query”)` on the `oEvent` parameter.
+
+We could also add more filters to the array, if we wanted to search more than one data field.
+
+The filter operator `FilterOperator.Contains` is **not** case-sensitive.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
