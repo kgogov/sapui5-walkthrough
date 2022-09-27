@@ -108,6 +108,15 @@ JSON is a very lightweight format for storing data and can be directly used as a
 
 In the **items** aggregation, we define the template for the list that will be automatically repeated for each invoice of our test data.
 
+## Step 22: Custom Formatters
+
+We add a status using the `firstStatus` aggregation to our `ObjectListItem` that will display the status of our invoice. \
+The custom formatter function is specified with the reserved property `formatter` of the binding syntax. \
+A `"."` in front of the formatter name means that the function is looked up in the controller of the current view. \
+There we defined a property `formatter` that holds our formatter functions, so we can access it by `.formatter.statusText`.
+
+Head to [this](https://sapui5.hana.ondemand.com/#/topic/07e4b920f5734fd78fdaa236f26236d8.html) link for more information.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
