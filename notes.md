@@ -133,6 +133,7 @@ In the **items** aggregation, we define the template for the list that will be a
 * Private functions and variables should always start with an underscore.
 * Always use icon fonts rather than images wherever possible, as they are scalable without quality loss (vector graphics) and do not need to be loaded separately.
 * Use data types instead of custom formatters whenever possible.
+* Only use expression binding for trivial calculations.
 
 ## Framework specifics
 
