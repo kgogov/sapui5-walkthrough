@@ -128,6 +128,12 @@ We could also add more filters to the array, if we wanted to search more than on
 
 The filter operator `FilterOperator.Contains` is **not** case-sensitive.
 
+## Step 24: Sorting and Grouping
+
+We add a declarative sorter to our binding syntax.\
+As usual, we transform the simple binding syntax to the object notation, specify the path to the data, and now add an additional `sorter` property. \
+By default, the sorting is ascending, but you could also add a property `descending` with the value `true` inside the sorter property to change the sorting order.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
