@@ -190,6 +190,25 @@ The function `opaTest` is the main aspect for defining integration tests with OP
 
 As you can see, the test case reads like a user story, we actually do not need the implementation of the methods yet to understand the meaning of the test case. This approach is called "Behavior Driven Development" or simply BDD and is popular in "Agile Software Development".
 
+## Step 29: Debugging Tools
+
+Luckily, SAPUI5 provides a couple of debugging tools that we can use within the app to check the application logic and the developer tools of modern browsers are also quite good.
+
+[Keyboard Shortcuts for SAPUI5 Tools](https://sapui5.hana.ondemand.com/#/topic/154844c3ac2a4675a37aeb6259a5e034.html)
+
+If you use the Google Chrome browser, you can install the **UI5 Inspector** plugin. \
+With this plugin, you can easily debug your SAPUI5- or OpenUI5-based apps. For more information, see **UI5 Inspector**.
+
+Sometimes errors are not as easy to spot and you actually need to debug the JavaScript code with the tools of the browser. \
+For performance reasons, the SAPUI5 files are shipped in a minified version, this means that all possible variable names are shortened and comments are removed.
+
+This makes debugging harder because the code is a lot less readable. \
+You can load the debug sources by adding the URL parameter `sap-ui-debug=true` or by pressing `Ctrl Shift Alt / Option + P` and selecting **Use Debug Sources** in the dialog box that is displayed. \
+After reloading the page, you can see in the **Network tab** of the browser’s developer tools that now a lot of files with the `–dbg` suffix are loaded. \
+These are the source code files that include comments and the uncompressed code of the app and the SAPUI5 artifacts.
+
+For a more detailed explanation of the SAPUI5 support tools, go through the [Troubleshooting](https://sapui5.hana.ondemand.com/#/topic/5661952e72df471b932eddc10350c081.html) tutorial.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -225,6 +244,7 @@ As you can see, the test case reads like a user story, we actually do not need t
 * All dependencies are replaced by stubs to test only the functionality in scope.
 * OPA tests are located in the `webapp/test/integration` folder of the application.
 * Use page objects and `journeys` for structuring OPA tests.
+* As per SAPUI5 convention uncompressed source files end with `*-dbg.js`
 
 ## Framework specifics
 
