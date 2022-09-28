@@ -148,6 +148,19 @@ If you use a remote URL in your code, for example a remote OData service, such a
 
 Depending on your development environment you have different options to overcome this restriction. For more information, see [Request Fails Due to Same-Origin Policy (Cross-Origin Resource Sharing - CORS)](https://sapui5.hana.ondemand.com/#/topic/5bb388fc289d44dca886c8fa25da466e.html).
 
+## Step 26: Mock Server Configuration
+
+This system is the so-called back-end system that we will now simulate with an SAPUI5 feature called mock server. \
+It serves local files, but it simulates a back-end system more realistically than just loading the local data.
+
+Test pages should not be placed in the application root folder but in a subfolder called **test** to clearly separate productive and test coding. \
+From this point on, you have two different entry pages: One for the real “connected” app (**index.html**) and one for local testing (**mockServer.html**).
+
+The namespace now points to the folder above (**"../"**), because the `mockServer.html` file is now in a subfolder of the webapp folder. Instead of loading the app component directly, we now call a script `initMockServer.js`.
+
+The metadata file contains information about the service interface. \
+The mock server will read this file to simulate the real OData service, and will return the results from our local source files in the proper format so that it can be consumed by the app (either in XML or in JSON format).
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -174,6 +187,8 @@ Depending on your development environment you have different options to overcome
 * Always use icon fonts rather than images wherever possible, as they are scalable without quality loss (vector graphics) and do not need to be loaded separately.
 * Use data types instead of custom formatters whenever possible.
 * Only use expression binding for trivial calculations.
+* The **webapp/test** folder contains non-productive code only.
+* Mock data and the script to start the **MockServer** are stored in the **webapp/localService** folder.
 
 ## Framework specifics
 
