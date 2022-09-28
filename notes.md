@@ -161,6 +161,23 @@ The namespace now points to the folder above (**"../"**), because the `mockServe
 The metadata file contains information about the service interface. \
 The mock server will read this file to simulate the real OData service, and will return the results from our local source files in the proper format so that it can be consumed by the app (either in XML or in JSON format).
 
+## Step 27: Unit Test with QUnit
+
+If you want to learn more about QUnit tests, have a look at our [Testing](https://sapui5.hana.ondemand.com/#/topic/291c9121e6044ab381e0b51716f97f52.html) tutorial, especially [Step 2: A First Unit Test](https://sapui5.hana.ondemand.com/#/topic/b81736e0fcb246efb3b0cf0ca422f8fd.html).
+
+We add a new folder **unit** under the **test** folder and a model subfolder where we will place our formatter unit test. \
+The folder structure matches the app structure to easily find the corresponding unit tests.
+
+The formatter file just contains one QUnit module for our formatter function. \
+It instantiates our `ResourceBundle` with the localized texts in the `beforeEach` function and destroys it again in the `afterEach` function. \
+These functions are called before and after each test is executed.
+
+Since we do not want to test the controller, the view, or the model functionality, we first remove the dependencies by replacing these calls with empty hulls with the help of [SinonJS](https://sinonjs.org/) and its stub method.
+
+Test stubs are functions with pre-programmed behavior. \
+They support the full SinonJS test spy API in addition to methods which can be used to alter the stub’s behavior. \
+If this part is a bit confusing have a look at the [official SinonJS documentation](https://sinonjs.org/releases/v14/) for test spies or ignore it for now, it will become clear later on.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -189,6 +206,11 @@ The mock server will read this file to simulate the real OData service, and will
 * Only use expression binding for trivial calculations.
 * The **webapp/test** folder contains non-productive code only.
 * Mock data and the script to start the **MockServer** are stored in the **webapp/localService** folder.
+* All unit tests are placed in the webapp/test/unit folder of the app.
+* Files in the test suite end with `*.qunit.html`.
+* The `unitTests.qunit.html` file triggers all unit tests of the app.
+* A unit test should be written for formatters, controller logic, and other individual functionality.
+* All dependencies are replaced by stubs to test only the functionality in scope.
 
 ## Framework specifics
 
