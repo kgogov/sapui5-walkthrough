@@ -178,6 +178,18 @@ Test stubs are functions with pre-programmed behavior. \
 They support the full SinonJS test spy API in addition to methods which can be used to alter the stub’s behavior. \
 If this part is a bit confusing have a look at the [official SinonJS documentation](https://sinonjs.org/releases/v14/) for test spies or ignore it for now, it will become clear later on.
 
+## Step 28: Integration Test with OPA
+
+Using integration and unit tests and running them consistently in a continuous integration (CI) environment, we can make sure that we don’t accidentally break our app or introduce logical errors in existing code.
+
+If you want to learn more about OPA tests, have a look at our [Testing](https://sapui5.hana.ondemand.com/#/topic/291c9121e6044ab381e0b51716f97f52.html) tutorial, especially [Step 6: A First OPA Test](https://sapui5.hana.ondemand.com/#/topic/1b47457cbe4941ee926317d827517acb.html).
+
+A **journey** consists of a series of integration tests that belong to the same context such as navigating through the app.
+
+The function `opaTest` is the main aspect for defining integration tests with OPA. Its parameters define a test name and a callback function that gets executed with the following OPA5 helper objects to write meaningful tests that read like a user story.
+
+As you can see, the test case reads like a user story, we actually do not need the implementation of the methods yet to understand the meaning of the test case. This approach is called "Behavior Driven Development" or simply BDD and is popular in "Agile Software Development".
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -211,6 +223,8 @@ If this part is a bit confusing have a look at the [official SinonJS documentati
 * The `unitTests.qunit.html` file triggers all unit tests of the app.
 * A unit test should be written for formatters, controller logic, and other individual functionality.
 * All dependencies are replaced by stubs to test only the functionality in scope.
+* OPA tests are located in the `webapp/test/integration` folder of the application.
+* Use page objects and `journeys` for structuring OPA tests.
 
 ## Framework specifics
 
