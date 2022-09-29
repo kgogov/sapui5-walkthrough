@@ -292,6 +292,21 @@ We can also hide single controls by device type when we set a CSS class like `sa
 We now use the `Date` type and provide the pattern of our date format in the source section of the format options. \
 It will display a more human-readable formatted date text that also fits to small screen devices.
 
+## Step 36: Content Density
+
+SAPUI5 contains different content densities allowing you to display larger controls for touch-enabled devices and a smaller, more compact design for devices that are operated by mouse.
+
+SAPUI5 controls can be displayed in multiple sizes, for example in a `compact` size that is optimized for desktop and non-touch devices, and in a `cozy` mode that is optimized for touch interaction.
+
+We add a method `onInit` on the app controller that is called when the app view is instantiated. \
+There we query the helper function that we defined on the app component to set the corresponding style class on the app view. \ All controls inside the app view will now automatically adjust either to the compact or cozy size as defined by the style.
+
+The "Hello World" dialog is not part of the `HelloPanel` view but opened in a special part of the DOM called "static area". \
+The content density class defined on the `app` view is not known to the dialog so we sync the style class of the app with the dialog manually.
+
+In the `contentDensities` section of the `sap.ui5` namespace, we specify the modes that the application supports. \
+Containers like the SAP Fiori launchpad allow switching the content density based on these settings.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
