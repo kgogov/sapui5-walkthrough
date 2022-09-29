@@ -241,6 +241,31 @@ The `bindElement` function is creating a binding context for a SAPUI5 control an
 
 On the detail page, we tell the control to display a back button by setting the parameter `showNavButton` to `true` and register an event handler that is called when the back button is pressed.
 
+## [Step 33: Custom Controls](https://sapui5.hana.ondemand.com/#/topic/d12d2ee6a5454d799358d425f9e7c4db)
+
+In this step, we are going to extend the functionality of SAPUI5 with a custom control. \
+We want to rate the product shown on the detail page, so we **create a composition of multiple standard controls** using the SAPUI5 extension mechanism and add some glue code to make them work nicely together. \
+This way, we can reuse the control across the app and keep all related functionality in one module.
+
+As with our controllers and views, the custom control inherits the common control functionality from a SAPUI5 base object, for controls this is done by extending the base class `sap.ui.core.Control`.
+
+A custom control is a JavaScript object that has two special sections (`metadata` and `renderer`) and a number of methods that implement the functionality of the control.
+
+The `metadata` section defines the data structure and thus the API of the control. \
+The `renderer` defines the HTML structure that will be added to the DOM tree of your app whenever the control is instantiated in a view. \
+The parameter `oRM` of the render function is the **SAPUI5 render manager** that can be used to write strings and control properties to the HTML page. \
+The `init` method is a special function that is called by the SAPUI5 core whenever the control is instantiated.
+
+> ℹ️ **Note** \
+> Controls always extend `sap.ui.core.Control` and render themselves. \
+> You could also extend `sap.ui.core.Element` or `sap.ui.base.ManagedObject` directly if you want to reuse life cycle features of SAPUI5 including data binding for objects that are not rendered.
+
+You can define aggregations and associations for controls. The difference is in the relation between the parent and the related control
+
+A new namespace `wt` is defined on the detail view so that we can reference our custom controls easily in the view.
+
+However, please be aware that the custom control is in your app and might have to be adjusted when the inner controls change in future versions of SAPUI5.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -279,6 +304,7 @@ On the detail page, we tell the control to display a back button by setting the 
 * As per SAPUI5 convention uncompressed source files end with `*-dbg.js`
 * Define the routing configuration in the descriptor
 * Add a path to go back to the parent page when the history state is unclear.
+* Put custom controls in the `control` folder of your app.
 
 ## Framework specifics
 
