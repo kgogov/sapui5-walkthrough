@@ -266,6 +266,15 @@ A new namespace `wt` is defined on the detail view so that we can reference our 
 
 However, please be aware that the custom control is in your app and might have to be adjusted when the inner controls change in future versions of SAPUI5.
 
+## Step 34: Responsiveness
+
+SAPUI5 applications can be run on phone, tablet, and desktop devices and we can configure the application to make best use of the screen estate for each scenario.
+
+The table has a built-in responsiveness feature that allows us to make the app more flexible. \
+Instead of the `ObjectListItem` that we had before, we will now split the information onto the cells that match the columns defined above. \
+Therefore we change it to a `ColumnListItem` control with the same attributes, but now with cells aggregation.
+
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -305,6 +314,7 @@ However, please be aware that the custom control is in your app and might have t
 * Define the routing configuration in the descriptor
 * Add a path to go back to the parent page when the history state is unclear.
 * Put custom controls in the `control` folder of your app.
+* Optimize your application for the different screen sizes of phone, tablet, and desktop devices.
 
 ## Framework specifics
 
