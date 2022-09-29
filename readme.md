@@ -209,6 +209,25 @@ These are the source code files that include comments and the uncompressed code 
 
 For a more detailed explanation of the SAPUI5 support tools, go through the [Troubleshooting](https://sapui5.hana.ondemand.com/#/topic/5661952e72df471b932eddc10350c081.html) tutorial.
 
+Step 30: Routing and Navigation
+
+We specify a routing configuration for our app and create a separate view for each page of the app, then we connect the views by triggering navigation events.
+
+There are three subsections that define the routing and navigation structure of the app
+* config
+* routes
+* targets
+
+In the component initialization method, we now add a call to initialize the router. \
+We do not need to instantiate the router manually, it is automatically instantiated based on our **AppDescriptor** configuration and assigned to the component.
+
+Initializing the router will evaluate the current URL and load the corresponding view automatically. \
+This is done with the help of the routes and targets that have been configured in the **AppDescriptor**.
+
+In general, one instance of a controller is instantiated for each view that references the controller.
+
+The router identifies the app control with the ID that corresponds to the property `controlId: “app”` in the **AppDescriptor**.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -245,6 +264,7 @@ For a more detailed explanation of the SAPUI5 support tools, go through the [Tro
 * OPA tests are located in the `webapp/test/integration` folder of the application.
 * Use page objects and `journeys` for structuring OPA tests.
 * As per SAPUI5 convention uncompressed source files end with `*-dbg.js`
+* Define the routing configuration in the descriptor
 
 ## Framework specifics
 
