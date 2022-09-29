@@ -307,6 +307,20 @@ The content density class defined on the `app` view is not known to the dialog s
 In the `contentDensities` section of the `sap.ui5` namespace, we specify the modes that the application supports. \
 Containers like the SAP Fiori launchpad allow switching the content density based on these settings.
 
+## Step 37: Accessibility
+
+[ARIA](https://blogs.sap.com/2015/06/01/accessible-rich-internet-applications-aria-part-1-introduction/) attributes are used by screen readers to recognize the application structure and to interpret UI elements properly. \
+That way, we can make our app more accessible for users who are limited in their use of computers, for example visually impaired persons.
+
+One part of the ARIA attribute set are the so-called landmarks. \
+You can compare landmarks to maps in that they help the user navigate through an app. \
+For this step, we will use Google Chrome with a free [landmark navigation extension](https://chrome.google.com/webstore/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp).
+
+As you can see, we now have four landmarks on our page. The top three landmarks structure our page:
+* **Overview Page** marks the complete page
+* **Header** marks the page title
+* **Page Content** marks the content of our page
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
