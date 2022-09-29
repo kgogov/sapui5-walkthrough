@@ -209,7 +209,7 @@ These are the source code files that include comments and the uncompressed code 
 
 For a more detailed explanation of the SAPUI5 support tools, go through the [Troubleshooting](https://sapui5.hana.ondemand.com/#/topic/5661952e72df471b932eddc10350c081.html) tutorial.
 
-Step 30: Routing and Navigation
+## Step 30: Routing and Navigation
 
 We specify a routing configuration for our app and create a separate view for each page of the app, then we connect the views by triggering navigation events.
 
@@ -227,6 +227,15 @@ This is done with the help of the routes and targets that have been configured i
 In general, one instance of a controller is instantiated for each view that references the controller.
 
 The router identifies the app control with the ID that corresponds to the property `controlId: “app”` in the **AppDescriptor**.
+
+## Step 31: Routing with Parameters
+
+We now add a navigation parameter `invoicePath` to the detail route so that we can hand over the information for the selected item to the detail page. \
+Mandatory navigation parameters are defined with curly brackets.
+
+The control instance that has been interacted with can be accessed by the `getSource` method that is available for all SAPUI5 events.
+
+The `bindElement` function is creating a binding context for a SAPUI5 control and receives the model name as well as the path to an item in a configuration object.
 
 ## Conventions
 
