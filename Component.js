@@ -1,7 +1,8 @@
 sap.ui.define([
   'sap/ui/core/UIComponent',
   'sap/ui/model/json/JSONModel',
-], function (UIComponent, JSONModel) {
+  'sap/ui/Device'
+], function (UIComponent, JSONModel, Device) {
   'use strict';
 
   return UIComponent.extend('sap.ui.demo.walkthrough.Component', {
@@ -21,6 +22,11 @@ sap.ui.define([
 
       var oModel = new JSONModel(oData);
       this.setModel(oModel);
+
+      // set device model
+      var oDeviceModel = new JSONModel(Device);
+      oDeviceModel.setDefaultBindingMode('OneWay');
+      this.setModel(oDeviceModel, 'device');
 
       // create the views based on the url/hash
       this.getRouter().initialize();

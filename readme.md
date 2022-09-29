@@ -274,6 +274,23 @@ The table has a built-in responsiveness feature that allows us to make the app m
 Instead of the `ObjectListItem` that we had before, we will now split the information onto the cells that match the columns defined above. \
 Therefore we change it to a `ColumnListItem` control with the same attributes, but now with cells aggregation.
 
+## Step 35: Device Adaptation
+
+By making use of the `sap.ui.Device` API and defining a device model we will make the app look great on many devices.
+
+> ℹ️ **Note** \
+> The `sap.ui.Device` API detects the device type (Phone, Tablet, Desktop) based on the user agent and many other properties of the device. \
+> Therefore simply reducing the screen size will not change the device type. \
+> To test this feature, you will have to enable device emulation in your browser or open it on a real device.
+
+We can also hide single controls by device type when we set a CSS class like `sapUiVisibleOnlyOnDesktop` or `sapUiHideOnDesktop`.
+
+> ℹ️ **Note** \
+> We have set the binding mode ot `OneWay` as the device model is read-only and we want to avoid changing the model accidentally when we bind properties of a control to it. \
+> By default, models in SAPUI5 are bidirectional (`TwoWay`). When the property changes, the bound model value is updated as well.
+
+We now use the `Date` type and provide the pattern of our date format in the source section of the format options. \
+It will display a more human-readable formatted date text that also fits to small screen devices.
 
 ## Conventions
 
