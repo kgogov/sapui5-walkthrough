@@ -237,6 +237,10 @@ The control instance that has been interacted with can be accessed by the `getSo
 
 The `bindElement` function is creating a binding context for a SAPUI5 control and receives the model name as well as the path to an item in a configuration object.
 
+## Step 32: Routing Back and History
+
+On the detail page, we tell the control to display a back button by setting the parameter `showNavButton` to `true` and register an event handler that is called when the back button is pressed.
+
 ## Conventions
 
 * Name of the root HTML file of the app is `index.html`
@@ -274,6 +278,7 @@ The `bindElement` function is creating a binding context for a SAPUI5 control an
 * Use page objects and `journeys` for structuring OPA tests.
 * As per SAPUI5 convention uncompressed source files end with `*-dbg.js`
 * Define the routing configuration in the descriptor
+* Add a path to go back to the parent page when the history state is unclear.
 
 ## Framework specifics
 
